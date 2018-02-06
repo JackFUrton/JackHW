@@ -3,19 +3,19 @@ import javax.swing.JOptionPane;
 public class UnitConversions {
 	public static void main(String[] args) {
 		String conversionType;
-		String conversionOperation;
-	
+		String finalUnit;
+
 		conversionType = getConversionType();
-		
-		switch(conversionType) {
+
+		switch (conversionType) {
 		case "length":
-			conversionOperation = getCentimetersOrInches();
+			finalUnit = getCentimetersOrInches();
 			break;
 		case "volume":
-			// code to ask....
+			finalUnit = getLitersOrGallons();
 			break;
 		case "temperature":
-			// code to ask c or f
+			finalUnit = getCelsiusorFarenheit();
 			break;
 		}
 	}
@@ -25,16 +25,30 @@ public class UnitConversions {
 		int n = JOptionPane.showOptionDialog(null, "Which unit of measure? ", "Conversion Type",
 				JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-		
 		return options[n];
 	}
-	
-	public static String getCentimetersOrInches() {
-		String[] options = {"Centimeters to Inches", "Inches to Centimeters" };
-		int n = JOptionPane.showOptionDialog(null, "", "",
-				JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-		
+	public static String getCentimetersOrInches() {
+		String[] options = { "Centimeters to Inches", "Inches to Centimeters" };
+		int n = JOptionPane.showOptionDialog(null, "", "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null,
+				options, options[0]);
+		return options[n];
+
+	}
+
+	public static String getLitersOrGallons() {
+		String[] options = { "Liters to Gallons", "Gallons to Liters" };
+		int n = JOptionPane.showOptionDialog(null, "", "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null,
+				options, options[0]);
+		return options[n];
+
+	}
+
+	public static String getCelsiusorFarenheit() {
+		String[] options = { "Celsius to Farenheit", "Farenheit to Celsius" };
+		int n = JOptionPane.showOptionDialog(null, "", "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null,
+				options, options[0]);
+
 		return options[n];
 	}
 }
