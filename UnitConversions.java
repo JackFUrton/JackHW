@@ -3,13 +3,18 @@ import javax.swing.JOptionPane;
 public class UnitConversions {
 	public static void main(String[] args) {
 		String conversionType;
-		
+
 		conversionType = getConversionType();
 	}
-	
+
 	public static String getConversionType() {
-		String str = JOptionPane.showInputDialog("enter conversion type: length, volume, or temperature");
-		return str.toLowerCase();
+		String[] options = { "length", "volume", "temperature" };
+		int n = JOptionPane.showOptionDialog(null, "Which unit of measure? ", "Integer Math",
+				JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+
 		
+		return options[n];
+
+
 	}
 }
