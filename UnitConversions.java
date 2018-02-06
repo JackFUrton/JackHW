@@ -2,20 +2,35 @@ import javax.swing.JOptionPane;
 
 public class UnitConversions {
 	public static void main(String[] args) {
-		String conversionType;
-		String finalUnit;
+		String conversionType = ""
+		String conversionOperation = "";
 
 		conversionType = getConversionType();
 
 		switch (conversionType) {
 		case "length":
-			finalUnit = getCentimetersOrInches();
+			conversionOperation = getCentimetersOrInches();
 			break;
 		case "volume":
-			finalUnit = getLitersOrGallons();
+			conversionOperation = getLitersOrGallons();
 			break;
 		case "temperature":
-			finalUnit = getCelsiusorFarenheit();
+			conversionOperation = getCelsiusorFarenheit();
+			break;
+		}
+		
+		switch (conversionOperation) {
+		case "Centimeters to Inches":
+			break;
+		case "Inches to Centimeters":
+			break;
+		case "Liters to Gallons":
+			break;
+		case "Gallons to Liters":
+			break;
+		case "Celsius to Farenheit":
+			break;
+		case "Farenheit to Celsius":
 			break;
 		}
 	}
