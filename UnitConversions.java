@@ -2,8 +2,12 @@ import javax.swing.JOptionPane;
 
 public class UnitConversions {
 	public static void main(String[] args) {
-		String conversionType = ""
+		String conversionType = "";
 		String conversionOperation = "";
+		double input = 0;
+		double output = 0;
+		String startingUnit = "";
+		String finalUnit = "";
 
 		conversionType = getConversionType();
 
@@ -21,8 +25,38 @@ public class UnitConversions {
 		
 		switch (conversionOperation) {
 		case "Centimeters to Inches":
+			startingUnit = "centimeters";
+			finalUnit = "inches";
 			break;
 		case "Inches to Centimeters":
+			startingUnit = "inches";
+			finalUnit = "centimeters";
+			break;
+		case "Liters to Gallons":
+			startingUnit = "liters";
+			finalUnit = "gallons";
+			break;
+		case "Gallons to Liters":
+			startingUnit = "gallons";
+			finalUnit = "liters";
+			break;
+		case "Celsius to Farenheit":
+			startingUnit = "degrees celsius";
+			finalUnit = "degrees farenheit";
+			break;
+		case "Farenheit to Celsius":
+			startingUnit = "degrees farenheit";
+			finalUnit = "degrees celsius";
+			break;
+		}
+		
+		input = Double.parseDouble(JOptionPane.showInputDialog("How many " + finalUnit + "?"));
+		
+		switch (conversionOperation) {
+		case "Centimeters to Inches":
+			break;
+		case "Inches to Centimeters":
+			output = input * 2.54;
 			break;
 		case "Liters to Gallons":
 			break;
@@ -33,6 +67,8 @@ public class UnitConversions {
 		case "Farenheit to Celsius":
 			break;
 		}
+		
+		JOptionPane.showMessageDialog(null, "" + input + " " + startingUnit + " is equal to " + output + " " + finalUnit + ".");
 	}
 
 	public static String getConversionType() {
