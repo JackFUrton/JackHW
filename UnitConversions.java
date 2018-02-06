@@ -3,13 +3,13 @@ import javax.swing.JOptionPane;
 public class UnitConversions {
 	public static void main(String[] args) {
 		String conversionType;
-		String finalUnit;
+		String conversionOperation;
 	
 		conversionType = getConversionType();
 		
 		switch(conversionType) {
 		case "length":
-			finalUnit = getCentimetersOrInches();
+			conversionOperation = getCentimetersOrInches();
 			break;
 		case "volume":
 			// code to ask....
