@@ -50,7 +50,7 @@ public class UnitConversions {
 			break;
 		}
 		
-		input = Double.parseDouble(JOptionPane.showInputDialog("How many " + finalUnit + "?"));
+		input = getInputDouble(finalUnit);
 		
 		switch (conversionOperation) {
 		case "Centimeters to Inches":
@@ -70,6 +70,11 @@ public class UnitConversions {
 		
 		JOptionPane.showMessageDialog(null, "" + input + " " + startingUnit + " is equal to " + output + " " + finalUnit + ".");
 	}
+	
+	public static double getInputDouble(String finalUnit) {
+		return Double.parseDouble(JOptionPane.showInputDialog("How many " + finalUnit + "?"));
+
+	};
 
 	public static String getConversionType() {
 		String[] options = { "length", "volume", "temperature" };
